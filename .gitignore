@@ -1,0 +1,19 @@
+# Terraform generated files and directories
+# Ignores the .terraform directory anywhere within the repository
+**/.terraform/
+
+# Terraform state files (local state should never be committed)
+# These are managed remotely by Terraform Cloud, but good to ignore any local remnants
+**/*.tfstate
+**/*.tfstate.*
+
+# Terraform plan files (binary output of a plan)
+# These are local and should not be committed
+*.tfplan
+
+# Local override files (often used for temporary local settings)
+# If you use files like `terraform.tfvars.override` for local testing
+*.tfvars.override
+override.tf
+override.tf.json
+
