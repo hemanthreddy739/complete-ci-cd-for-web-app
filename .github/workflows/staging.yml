@@ -189,10 +189,11 @@ jobs:
     # ======================================================
     # Checkout the PR branch so that we can deploy it
     # ======================================================
-    - uses: actions/checkout@v2
-      name: 'Checkout PR branch'
-      with:
-        ref: ${{ steps.verify_pr_number.outputs.result }}
+    - name: Checkout PR branch manually
+      run: |
+          git fetch origin ${{ steps.verify_pr_number.outputs.result }}:${{ steps.verify_pr_number.outputs.result }}
+          git checkout ${{ steps.verify_pr_number.outputs.result }}
+
 
     # ======================================================
     # We sync the files in this directory to the staging
