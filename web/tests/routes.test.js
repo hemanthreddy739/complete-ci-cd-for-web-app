@@ -15,8 +15,8 @@ describe('New Endpoint', () => {
       .get('/ice-flakes')
     expect(res.body).toEqual({
       resource: 'ice-flakes',
-      count: 22334455,
-      shape: 'rectangle' // Change this line
+      count: 22,
+      shape: 'pentagon' // Change this line
     })
     expect(res.statusCode).toEqual(201)
   })
