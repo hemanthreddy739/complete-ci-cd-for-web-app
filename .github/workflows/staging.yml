@@ -189,10 +189,11 @@ jobs:
     # ======================================================
     # Checkout the PR branch so that we can deploy it
     # ======================================================
-    - name: Checkout PR branch manually
+    - name: Checkout PR branch from fork
       run: |
-          git fetch origin ${{ steps.verify_pr_number.outputs.result }}:${{ steps.verify_pr_number.outputs.result }}
-          git checkout ${{ steps.verify_pr_number.outputs.result }}
+            git fetch origin pull/${{ github.event.inputs.PR_number }}/head:pr-${{ github.event.inputs.PR_number }}
+            git checkout pr-${{ github.event.inputs.PR_number }}
+
 
 
     # ======================================================
